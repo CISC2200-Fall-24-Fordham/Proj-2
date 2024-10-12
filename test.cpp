@@ -1,5 +1,5 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "BigInt.h"
+#include "BigInt.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <string>
