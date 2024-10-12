@@ -1,36 +1,27 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "BigInt.hpp"
-#include <iostream>
-#include <cstdlib>
+#include "Calculator.hpp"
+#include "Transformer.hpp"
+#include "doctest.h"
+#include <sstream>
 #include <string>
-// If you want to get doctest here...
-// #include <doctest.h>
 
-using namespace std;
+TEST_CASE("All") {
+  std::string inputExpr = "456 + (1123 - 1) + 1";
 
-#define SIZE 10
+  std::stack<ds::Token> postfixStk = ds::InfixToPostfixTransformer::transform(inputExpr);
 
-int main()
-{
-  string input1,input2, op;
-
-  cin >> op;
-  cin >> input1;
-  cin >> input2;
-
-  ds::BigInt a(input1);
-  ds::BigInt b(input2);
-
-  if (op=="add")
-  {
-  	ds::BigInt r = a + b;
-  	r.output();
+  std::stringstream ss1;
+  std::stack<ds::Token> postfixStkCopy = postfixStk;
+  while (!postfixStkCopy.empty()) {
+    ds::Token top = postfixStkCopy.top();
+    postfixStkCopy.pop();
+    ss1 << top << " ";
   }
-  else if (op=="subtract")
-  {
-	//assume a>=b
-  	ds::BigInt r2 = a - b;
-  	r2.output();
-   }
+  REQUIRE(ss1.str() == "Plus(+) Number(1) Plus(+) Minus(-) "
+                       "Number(1) Number(1123) Number(456) ");
 
+  ds::BigInt res = ds::Calculator::calculate(postfixStk);
+  std::stringstream ss2;
+  ss2 << res;
+  REQUIRE(ss2.str() == "1579");
 }

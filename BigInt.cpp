@@ -6,11 +6,6 @@ ds::BigInt::BigInt(std::string str)
                  [](char c) { return c - '0'; });
 }
 
-void ds::BigInt::output()
-{
-  std::cout << *this << std::endl;
-}
-
 void ds::BigInt::add(const BigInt& a, const BigInt& b, BigInt& result) const
 {
   int carry = 0;
