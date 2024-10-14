@@ -14,9 +14,9 @@ namespace ds
     explicit BigInt(std::string str);
     // Since we are not managing dynamic memory, we don't need the rule of three!
     void output() { std::cout << *this << std::endl;}
-    // BONUS: TODO: Implement the * operator
     BigInt operator+(const BigInt& other) const;
     BigInt operator-(const BigInt& other) const;
+    BigInt operator*(const BigInt& other) const;
     // While this function strictly isn't required, it is helpful for `-` operator
     bool operator>=(const BigInt& other) const;
     // This operator is used in testing / implementing output
@@ -32,6 +32,7 @@ namespace ds
     // Add and Subtract are private as they are internal implementation details
     void add(const BigInt& a, const BigInt& b, BigInt& result) const;
     void subtract(const BigInt& a, const BigInt& b, BigInt& result) const;
+    void multiply(const BigInt& a, const BigInt& b, BigInt& result) const;
     std::vector<int> digits;
   };
 

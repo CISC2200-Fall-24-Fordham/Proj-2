@@ -29,6 +29,8 @@ Implement the methods outlined with `TODO` markings in the code comments:
 ## Hints
 
 https://en.wikipedia.org/wiki/Reverse_Polish_notation
+https://www.web4college.com/converters/infix-to-postfix-prefix.php
+
 
 ## Workflows
 
