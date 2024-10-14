@@ -6,7 +6,7 @@ namespace ds {
 
 class Tokenizer {
 public:
-  explicit Tokenizer(const std::string &code) { m_beg = code.begin(); }
+  explicit Tokenizer(const std::string &code) : m_beg(code.begin()) {}
 
   /**
    * Next token
@@ -45,10 +45,14 @@ private:
     return Token(Token::Kind::Number, start, m_beg);
   }
 
-  Token atom(Token::Kind kind) { return Token(kind, m_beg++, 1); }
+  Token atom(Token::Kind kind) {
+    auto copy = m_beg;
+    ++m_beg;
+    return Token(kind, std::move(copy), 1); 
+  }
 
   char peek() const { return *m_beg; }
-  void forward() { m_beg++; }
+  void forward() { ++m_beg; }
 
   std::string::const_iterator m_beg{};
 };

@@ -7,10 +7,12 @@ CXXFLAGS := -O0 -g -Wall -std=c++20 -Werror=return-type
 test: test.out
 	./$< -tc="$(TC)" -sc="$(SC)"
 
-check: BigInt.h
+check: Calculator.cpp BigInt.cpp Transformer.cpp
 	@dos2unix $^ > /dev/null 2>&1
 	@echo "Suggestions are for reference only ..."
 	@cppcheck --language=c++ --enable=style,warning --suppress=copyCtorAndEqOperator $^
 
 clean:
 	@rm -f *.out
+
+all: clean test.out check test
