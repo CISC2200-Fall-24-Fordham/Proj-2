@@ -2,6 +2,7 @@
 
 #include <ostream>
 #include <string>
+#include <cassert>
 
 namespace ds {
 
@@ -47,6 +48,24 @@ public:
     };
     return os << names[static_cast<int>(token.kind)] << "("
               << token.lexeme + ")";
+  }
+
+  // Need to support >= operator to compare precendence of operators
+  // Paren > Asterisk > (Plus == Minus)
+  bool operator>=(const Token &other) const {
+    if (kind == Kind::LeftParen || kind == Kind::RightParen)
+      return true;
+    else if (other.kind == Kind::LeftParen || other.kind == Kind::RightParen)
+      return false;
+    if (kind == Kind::Asterisk)
+      return true;
+    else if (other.kind == Kind::Asterisk)
+      return false;
+    
+    // Plus and Minus have the same precedence
+    assert(kind == Kind::Plus || kind == Kind::Minus);
+    assert(other.kind == Kind::Plus || other.kind == Kind::Minus);
+    return true;
   }
 };
 
