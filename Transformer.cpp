@@ -15,17 +15,20 @@
  *      For each token in the infix expression:
  *          If the token is a number, add it to the result
  *          If the token is an operator:
- *              While the stack is not empty and the top of the stack has higher precedence:
+ *              While the stack is not empty and the top of the stack >= current operator, and the top of the stack is not a left parenthesis:
  *                  Pop the top of the stack and add it to the result
  *              Push the current operator to the stack
  *          If the token is a left parenthesis, push it to the stack
  *          If the token is a right parenthesis:
  *             While the top of the stack is not a left parenthesis:
  *                  Pop the top of the stack and add it to the result
- *      
+ *             Pop the left parenthesis
+ *      While the operator stack is not empty:
+ *          Pop the top of the stack and add it to the result
+ *      Return the result
  */
 std::stack<ds::Token> ds::InfixToPostfixTransformer::infixToPostfix(const std::vector<ds::Token> &infix)
 {
-    // TODO
-    return std::stack<ds::Token>();
+  // TODO
+  return std::stack<ds::Token>();
 }

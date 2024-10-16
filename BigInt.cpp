@@ -70,6 +70,12 @@ void ds::BigInt::subtract(const BigInt& a, const BigInt& b, BigInt& result) cons
   }
 }
 
+void ds::BigInt::multiply(const ds::BigInt& a, const ds::BigInt& b, ds::BigInt& result) const
+{
+  // TODO
+  result = BigInt("0");
+}
+
 ds::BigInt ds::BigInt::operator+(const BigInt& other) const
 {
   BigInt result;
@@ -88,6 +94,13 @@ ds::BigInt ds::BigInt::operator-(const BigInt& other) const
   {
     BigInt::subtract(other, *this, result);
   }
+  return result;
+}
+
+ds::BigInt ds::BigInt::operator*(const BigInt& other) const
+{
+  BigInt result;
+  BigInt::multiply(*this, other, result);
   return result;
 }
 

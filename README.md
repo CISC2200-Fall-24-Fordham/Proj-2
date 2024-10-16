@@ -1,6 +1,6 @@
 # CISC 2200 SE2 Project - Part II
 
-TODO: Add brief description
+This is part 2 of the SE2 project. This part of the project focuses on parsing infix expressions and converting them to postfix expressions, as well as computing results based on the postfix expressions.
 
 ## Provided code
 
@@ -22,24 +22,27 @@ If you haven't done so already, please set up programming environment our our ow
 
 ## Requirements
 
-Implement the methods outlined with `TODO` markings in the code comments:
+Implement the methods outlined with `TODO` markings in the code comments.
 
+You will submit the following files to the autograder:
 
+- `BigInt.cpp`
+- `Calculator.cpp`
+- `Transformer.cpp`
 
 ## Hints
 
-https://en.wikipedia.org/wiki/Reverse_Polish_notation
-https://www.web4college.com/converters/infix-to-postfix-prefix.php
-
+- [Reverse Polish Notation Wikipedia](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
+- [Infix-to-postfix Online Tool](https://www.web4college.com/converters/infix-to-postfix-prefix.php)
 
 ## Workflows
 
-TODO:
+New to this project, there are a few different ways to build / test your code:
 
-* Add info about new magic button
-* Add info about composite makefile commands
-* Add info about adding tests
-* (BONUS): Add doxygen support?
+1. While viewing the relevant file, you can use the `magic button` to compile and run your code.
+2. You can use the `make all` composite makefile command to compile and run your code.
+3. You can add your own workflows to the Makefile / add tests as required
+4. Run you calculator from the command line `make clean; make main.out; ./main.out`
 
 ## Style
 
@@ -58,8 +61,4 @@ Feel free to ignore them, however I find that these suggestions help simplify an
 
 ## Submission
 
-Submit your **BigInt.h** file at the following link:
-
-[Project1 submission link](https://storm.cis.fordham.edu:8443/web/project/1949)
-
-The autograder compiles and tests your programs using the testcases listed in **testcases.txt**. You can find the expected output for each case in this file.
+The Autograder will be setup shortly.

@@ -10,7 +10,7 @@
  * @post The postfixStk is empty
  * 
  * Some pseudo code to help you get started:
- * 
+ *      Reverse the postfixStk
  *      Create a stack to store the result
  *      While the postfixStk is not empty:
  *          Pop the top element
@@ -21,6 +21,6 @@
  */
 ds::BigInt ds::Calculator::calculate(std::stack<ds::Token> &postfixStk)
 {
-    // TODO: Implement the function
-    return ds::BigInt("123");
+  // TODO
+  return ds::BigInt("0");
 }
