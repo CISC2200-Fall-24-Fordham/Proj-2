@@ -1,0 +1,24 @@
+CXX := g++
+CXXFLAGS := -O0 -g -Wall -std=c++11 -Werror=return-type
+
+main.out: Transformer.cpp Calculator.cpp main.cpp
+	@$(CXX) $(CXXFLAGS) $^ -o $@ -lgmpxx -lgmp
+
+test.out: Transformer.cpp Calculator.cpp test.cpp
+	@$(CXX) $(CXXFLAGS) $^ -o $@ -lgmpxx -lgmp
+
+main: main.out
+	@valgrind --quiet --leak-check=full ./$<
+
+test: test.out
+	@valgrind --quiet --leak-check=full ./$< -tc="$(TC)" -sc="$(SC)"
+
+check: Transformer.cpp Calculator.cpp
+	@dos2unix $^ > /dev/null 2>&1
+	@echo "Suggestions are for reference only ..."
+	@cppcheck --language=c++ --enable=style,warning \
+		--suppress=postfixOperator \
+		--suppress=copyCtorAndEqOperator $^
+
+clean:
+	@rm -f *.out
