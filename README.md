@@ -61,4 +61,4 @@ Feel free to ignore them, however I find that these suggestions help simplify an
 
 ## Submission
 
-Use the [Project Part 2 Submission Link](https://storm.cis.fordham.edu:8443/web/project/1950) to submit your code. This is due Nov 12 th at 11:59pm EST.
+Use the [Project Part 2 Submission Link](https://storm.cis.fordham.edu:8443/web/project/1950) to submit your code. This is due Nov 15 th at 11:59pm EST.
