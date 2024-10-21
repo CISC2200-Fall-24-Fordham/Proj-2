@@ -4,6 +4,9 @@ CXXFLAGS := -O0 -g -Wall -std=c++20 -Werror=return-type
 %.out: %.cpp
 	@$(CXX) $(CXXFLAGS) $^ BigInt.cpp Calculator.cpp Transformer.cpp -o $@
 
+main: main.out
+	./$<
+
 test: test.out
 	./$< -tc="$(TC)" -sc="$(SC)"
 
