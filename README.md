@@ -61,4 +61,4 @@ Feel free to ignore them, however I find that these suggestions help simplify an
 
 ## Submission
 
-The Autograder will be setup shortly.
+Use the [Project Part 2 Submission Link](https://storm.cis.fordham.edu:8443/web/project/1950) to submit your code. This is due Nov 18th at 11:59pm EST.
